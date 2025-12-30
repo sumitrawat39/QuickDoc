@@ -17,16 +17,39 @@ function Navbar() {
       />
 
       <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
-        <NavLink to="/" className="hover:text-[#5f6FFF]">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-[#5f6FFF]" : "hover:text-[#5f6FFF]"
+          }
+        >
           HOME
         </NavLink>
-        <NavLink to="/doctors" className="hover:text-[#5f6FFF]">
+
+        <NavLink
+          to="/doctors"
+          className={({ isActive }) =>
+            isActive ? "text-[#5f6FFF]" : "hover:text-[#5f6FFF]"
+          }
+        >
           ALL DOCTORS
         </NavLink>
-        <NavLink to="/about" className="hover:text-[#5f6FFF]">
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? "text-[#5f6FFF]" : "hover:text-[#5f6FFF]"
+          }
+        >
           ABOUT
         </NavLink>
-        <NavLink to="/contact" className="hover:text-[#5f6FFF]">
+
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "text-[#5f6FFF]" : "hover:text-[#5f6FFF]"
+          }
+        >
           CONTACT
         </NavLink>
       </ul>

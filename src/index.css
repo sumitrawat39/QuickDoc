@@ -2,3 +2,19 @@
 .active hr {
   @apply block;
 }
+
+::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.bg-primary {
+  background-color: #5f6fff;
+}
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.text-primary {
+  color: #5f6fff;
+}
