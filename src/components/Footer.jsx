@@ -58,7 +58,7 @@ function Footer() {
                 +91 9939023903
               </li>
               <li className="hover:text-primary transition cursor-pointer">
-                Sumit@gmail.com
+                sumit@gmail.com
               </li>
             </ul>
           </div>
