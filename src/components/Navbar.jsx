@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between px-6 py-2 border-b border-gray-300 bg-white">
       <img
-        className="w-14 h-14 cursor-pointer"
+        className="w-17 h-15 cursor-pointer"
         src={assets.QuickDocLogo}
         alt="LOGO"
         onClick={() => navigate("/")}
