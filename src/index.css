@@ -18,3 +18,8 @@
 .text-primary {
   color: #5f6fff;
 }
+@media(max-width:740px){
+  .active p{
+    @apply text-white bg-[#5f6fff]
+  }
+}
