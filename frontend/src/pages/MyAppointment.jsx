@@ -16,7 +16,6 @@ function MyAppointment() {
             key={index}
             className="flex flex-col sm:flex-row gap-6 p-4 border rounded-xl shadow-sm hover:shadow-md transition-all"
           >
-            {/* Doctor Image */}
             <div className="shrink-0">
               <img
                 className="w-32 h-32 object-cover rounded-lg bg-indigo-50"
@@ -44,7 +43,6 @@ function MyAppointment() {
               </p>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col gap-3 justify-end sm:min-w-[180px]">
               <button className="text-sm py-2 border rounded-lg text-stone-600 hover:bg-[#5f6fff] hover:text-white transition-all">
                 Pay Online
