@@ -43,7 +43,7 @@ function MyAppointment() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 justify-end sm:min-w-[180px]">
+            <div className="flex flex-col gap-3 justify-end sm:min-w-45">
               <button className="text-sm py-2 border rounded-lg text-stone-600 hover:bg-[#5f6fff] hover:text-white transition-all">
                 Pay Online
               </button>
