@@ -27,9 +27,11 @@ function Appointment() {
   };
 
   const getAvailableSlots = async () => {
-    setdocSlots([]);
+    if (!docInfo || !docInfo.slots_booked) return;
 
-    let today = new Date();
+  setdocSlots([]);
+
+  let today = new Date();
 
     for (let i = 0; i < 7; i++) {
       let currentDate = new Date(today);
@@ -52,9 +54,10 @@ function Appointment() {
       let timeSlots = [];
 
       while (currentDate < endTime) {
-        let formattedTime = currentDate.toLocaleTimeString([], {
+        let formattedTime = currentDate.toLocaleTimeString("en-US", {
           hour: "2-digit",
           minute: "2-digit",
+          hour12: true,
         });
 
         let day = currentDate.getDate();
@@ -156,9 +159,7 @@ function Appointment() {
               <p className="flex items-center gap-1 text-sm font-medium text-gray-900 mt-3">
                 About <img src={assets.info_icon} alt="" />
               </p>
-              <p className="text-sm text-gray-600 max-w-175">
-                {docInfo.about}
-              </p>
+              <p className="text-sm text-gray-600 max-w-175">{docInfo.about}</p>
             </div>
             <p className="text-black-500 font-medium mt-4">
               Appointment fee:{" "}
