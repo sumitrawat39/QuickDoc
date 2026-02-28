@@ -4,6 +4,7 @@ import { AdminContext } from "../context/AdminContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { DoctorContext } from "../context/DoctorContext";
 
 function Login() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const { setAToken, backendUrl } = useContext(AdminContext);
-
+  const { setDToken } = useContext(DoctorContext);
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
@@ -25,16 +26,28 @@ function Login() {
           password,
         });
         if (data.success) {
-          localStorage.setItem("aToken",data.token)
-         setAToken(data.token);
-         toast.success("Login Successful");
-         navigate("/");
+          localStorage.setItem("aToken", data.token);
+          setAToken(data.token);
+          console.log(data.token)
+          toast.success("Login Successful");
+          navigate("/");
+        } else {
+          toast.error(data.message);
         }
-        else{
-          toast.error(data.message)
-          
+      } else {
+        const { data } = await axios.post(backendUrl + "/api/doctor/login", {
+          email,
+          password,
+        });
+        if (data.success) {
+          localStorage.setItem("dToken", data.token);
+          setDToken(data.token);
+          toast.success("Login Successful");
+          navigate("/");
+        } else {
+          toast.error(data.message);
         }
-      } 
+      }
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed");
     }
@@ -60,7 +73,7 @@ function Login() {
         </div>
         <div className="w-full">
           <p>Password</p>
-          <input 
+          <input
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             className="border border-[#DADADA] rounded w-full p-2 mt-1"
