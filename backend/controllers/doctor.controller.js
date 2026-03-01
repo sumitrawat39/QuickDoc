@@ -52,7 +52,7 @@ const loginDoctor = async (req, res) => {
 
 const appointmentsDoctor = async (req, res) => {
   try {
-    const docId = req.docId;
+    const docId = req.docId; 
     const appointments = await appointmentModel.find({ docId });
 
     res.status(200).json({ success: true, appointments });
@@ -61,4 +61,55 @@ const appointmentsDoctor = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-export { changeAvailablity, doctorList, loginDoctor ,appointmentsDoctor};
+
+const appointmentComplete = async (req,res) => {
+  try {
+    const { docId, appointmentId } = req.body;
+
+    const appointmentData = appointmentModel.findById(appointmentId);
+    if (appointmentData && appointmentData.docId === docId) {
+      await appointmentModel.findByIdAndUpdate(appointmentId, {
+        isCompleted: true,
+      });
+      return res
+        .status(200)
+        .json({ success: true, message: "Appointment completed" });
+    } else {
+      return res.status(400).json({ success: false, message: "Mark Failed" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+const appointmentCancel = async (req,res) => {
+  try {
+    const { docId, appointmentId } = req.body;
+
+    const appointmentData = appointmentModel.findById(appointmentId);
+    if (appointmentData && appointmentData.docId === docId) {
+      await appointmentModel.findByIdAndUpdate(appointmentId, {
+        cancelled: true,
+      });
+      return res
+        .status(200)
+        .json({ success: true, message: "Appointment Cancelled" });
+    } else {
+      return res
+        .status(400)
+        .json({ success: false, message: "Cancellation Failed" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+export {
+  changeAvailablity,
+  doctorList,
+  loginDoctor,
+  appointmentsDoctor,
+  appointmentComplete,
+  appointmentCancel,
+};
