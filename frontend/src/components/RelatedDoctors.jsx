@@ -29,7 +29,7 @@ function RelatedDoctors({ speciality, docId }) {
               navigate(`/appointment/${item._id}`);
               scrollTo(0, 0);
             }}
-            className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500"
+            className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2.5 transition-all duration-500"
             key={index}
           >
             <img className="bg-blue-50 " src={item.image} alt="" />

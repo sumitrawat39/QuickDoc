@@ -19,7 +19,7 @@ function Contact() {
             XYZ, <br /> INDIA
           </p>
           <p className="text-gray-500">
-            Tel: +91 9939023903 <br />
+            Tel: +91 1234567890 <br />
             Email: sumit@gmail.com
           </p>
           <p className="font-semibold text-lg text-gray-700">

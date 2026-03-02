@@ -9,7 +9,6 @@ function Footer() {
     <div className="bg-gray-50 ">
       <div className="md:mx-10 px-6 py-7 ">
         <div className="grid grid-cols-1 sm:grid-cols-[3fr_1fr_1fr] gap-14 text-sm">
-          {/* Left Section */}
           <div>
             <img
               className="mb-5 w-40"
@@ -31,17 +30,17 @@ function Footer() {
                   scrollTo(0, 0);
                 }}
               >
-                <li className="hover:text-primary cursor-pointer transition">
+                <li className="hover:text-[#5f6fff] cursor-pointer transition">
                   Home
                 </li>
               </Link>
-              <li className="hover:text-primary cursor-pointer transition">
+              <li className="hover:text-[#5f6fff] cursor-pointer transition">
                 About us
               </li>
-              <li className="hover:text-primary cursor-pointer transition">
+              <li className="hover:text-[#5f6fff] cursor-pointer transition">
                 Contact us
               </li>
-              <li className="hover:text-primary cursor-pointer transition">
+              <li className="hover:text-[#5f6fff] cursor-pointer transition">
                 Privacy Policy
               </li>
             </ul>
@@ -53,10 +52,10 @@ function Footer() {
               Get In Touch
             </p>
             <ul className="flex flex-col gap-3 text-gray-600">
-              <li className="hover:text-primary transition cursor-pointer">
+              <li className="hover:text-[#5f6fff] transition cursor-pointer">
                 +91 1234567890
               </li>
-              <li className="hover:text-primary transition cursor-pointer">
+              <li className="hover:text-[#5f6fff] transition cursor-pointer">
                 sumit@gmail.com
               </li>
             </ul>
