@@ -13,15 +13,13 @@ function DoctorAppointments() {
     cancelAppointment,
     completeAppointment,
   } = useContext(DoctorContext);
-  const { calculateAge, slotDateFormat, currrency } = useContext(AppContext);
+  const { calculateAge, slotDateFormat, currency } = useContext(AppContext);
 
   useEffect(() => {
     if (dToken) {
       getAppointments();
     }
   }, [dToken]);
-  console.log("Token:", dToken);
-  console.log("Appointments:", appointments);
   return (
     <div className="w-full max-w-6xl m-5">
       <p className="mb-4 text-xl font-semibold text-gray-700">
@@ -76,7 +74,7 @@ function DoctorAppointments() {
             </p>
 
             <p className="font-medium text-gray-700">
-              {currrency}
+              {currency}
               {item.amount}
             </p>
             {item.cancelled ? (

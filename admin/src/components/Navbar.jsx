@@ -2,9 +2,13 @@ import React, { useContext } from "react";
 import { assets } from "../assets/assets";
 import { AdminContext } from "../context/AdminContext";
 import { useNavigate } from "react-router-dom";
+import { use } from "react";
+import { DoctorContext } from "../context/DoctorContext";
 
 function Navbar() {
   const { aToken, setAToken } = useContext(AdminContext);
+  const { dToken, setDToken } = useContext(DoctorContext);
+
   const navigate = useNavigate();
 
   const logout = () => {
@@ -12,13 +16,15 @@ function Navbar() {
       setAToken("");
       localStorage.removeItem("aToken");
     }
+    if (dToken) {
+      setDToken("");
+      localStorage.removeItem("dToken");
+    } 
     navigate("/");
   };
 
   return (
     <div className="flex items-center justify-between px-6 py-2 border-b border-gray-300 bg-white">
-      
-      {/* Left Section */}
       <div className="flex items-center gap-3">
         <img
           className="w-17 h-15  cursor-pointer hover:opacity-80 transition"

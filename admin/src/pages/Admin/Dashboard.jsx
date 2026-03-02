@@ -69,11 +69,17 @@ function Dashboard() {
                   <p className="text-gray-800 font-medium ">
                     {item.docData.name}
                   </p>
-                  <p className="text-gray-600">{slotDateFormat(item.slotDate)}</p>
+                  <p className="text-gray-600">
+                    {slotDateFormat(item.slotDate)}
+                  </p>
                 </div>
                 {item.cancelled ? (
                   <p className="text-red-500 text-xs font-semibold text-center bg-red-50 px-3 py-1 rounded-full">
                     Cancelled
+                  </p>
+                ) : item.isCompleted ? (
+                  <p className="text-green-500 text-xs font-semibold text-center bg-red-50 px-3 py-1 rounded-full">
+                    Completed
                   </p>
                 ) : (
                   <img

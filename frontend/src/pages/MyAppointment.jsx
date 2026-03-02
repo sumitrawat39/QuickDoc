@@ -38,7 +38,6 @@ function MyAppointment() {
       });
       if (data.success) {
         setAppointments(data.appointments.reverse());
-        console.log(data.appointments);
       }
     } catch (error) {
       console.log(error);
@@ -159,12 +158,12 @@ function MyAppointment() {
             </div>
 
             <div className="flex flex-col gap-3 justify-end sm:min-w-45">
-              {!item.cancelled && item.payment && (
+              {!item.cancelled && item.payment && !item.isCompleted && (
                 <button className="sm:min-w-48 py-2 border rounded text-stone-500 bg-indigo-50">
                   Paid
                 </button>
               )}
-              {!item.cancelled && !item.payment && (
+              {!item.cancelled && !item.payment && !item.isCompleted && (
                 <button
                   onClick={() => appointmentRazorpay(item._id)}
                   className="text-sm py-2 border rounded-lg text-stone-600 hover:bg-[#5f6fff] hover:text-white transition-all"
@@ -172,7 +171,7 @@ function MyAppointment() {
                   Pay Online
                 </button>
               )}
-              {!item.cancelled && (
+              {!item.cancelled && !item.isCompleted && (
                 <button
                   onClick={() => cancelAppointment(item._id)}
                   className="text-sm py-2 border rounded-lg text-stone-600 hover:bg-red-600 hover:text-white transition-all"
@@ -180,11 +179,14 @@ function MyAppointment() {
                   Cancel appointment
                 </button>
               )}
-              {item.cancelled && (
+              {item.cancelled && !item.isCompleted && (
                 <button className="sm:min-w-48 py-2 border border-red-500 rounded text-red-500 ">
                   Appointment Cancelled
                 </button>
               )}
+              {
+                item.isCompleted&& <button className="sm:min-w-48 py-2 border border-green-500 rounded  text-green-500">Completed</button>
+              }
             </div>
           </div>
         ))}

@@ -22,7 +22,6 @@ function Footer() {
             </p>
           </div>
 
-          {/* Center Section */}
           <div>
             <p className="text-xl font-medium mb-5 text-gray-800">COMPANY</p>
             <ul className="flex flex-col gap-3 text-gray-600">
@@ -55,7 +54,7 @@ function Footer() {
             </p>
             <ul className="flex flex-col gap-3 text-gray-600">
               <li className="hover:text-primary transition cursor-pointer">
-                +91 9939023903
+                +91 1234567890
               </li>
               <li className="hover:text-primary transition cursor-pointer">
                 sumit@gmail.com
@@ -64,7 +63,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom Line */}
         <div className="border-t mt-14 pt-6 text-center text-gray-500 text-sm">
           &copy; {new Date().getFullYear()} QuickDoc. All rights reserved.
         </div>

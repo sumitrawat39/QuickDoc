@@ -28,7 +28,6 @@ function Login() {
         if (data.success) {
           localStorage.setItem("aToken", data.token);
           setAToken(data.token);
-          console.log(data.token)
           toast.success("Login Successful");
           navigate("/");
         } else {

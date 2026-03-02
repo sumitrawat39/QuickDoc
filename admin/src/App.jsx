@@ -18,7 +18,6 @@ import DoctorProfile from "./pages/Doctor/DoctorProfile";
 
 function App() {
   const { aToken } = useContext(AdminContext);
-  console.log("Token:", aToken);
   const { dToken } = useContext(DoctorContext);
   return (
     <>
