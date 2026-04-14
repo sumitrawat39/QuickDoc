@@ -26,66 +26,17 @@ Use the following Razorpay test credentials:
 ---
 
 ## 🧑‍💻 Tech Stack
-
-### 🔹 Frontend
-
-* React.js
-* Tailwind CSS
-* React Router
-* Axios
-* React Toastify
-
-### 🔹 Backend
-
-* Node.js
-* Express.js
-
-### 🔹 Database
-
-* MongoDB (Mongoose)
-
-### 🔹 Authentication
-
-* JWT (JSON Web Tokens)
-
-### 🔹 Integrations
-
-* Cloudinary (Image Storage)
-* Razorpay (Payment Gateway – Test Mode)
+* **Frontend** – React.js, Tailwind CSS, React Router, Toastify, Axios
+*  **Backend** – Node.js, Express.js
+* **Database** –  MongoDB (Mongoose)
+*  **Authentication** – JWT (JSON Web Tokens)
+* *Cloud Integrations* – Cloudinary (Image Storage)
+*  **Payment Gateway** –Razorpay (Payment Gateway – Test Mode)
 
 ---
 
 ## 👥 User Roles & Functionalities
-
-### 🧑 Patient
-
-* Register and log in securely
-* Browse and filter doctors
-* Book and cancel appointments
-* Make online payments
-
-### 👨‍⚕️ Doctor
-
-* View and manage appointments
-* Access personalized dashboard
-* Update profile information
-
-### 🛡️ Admin
-
-* Monitor platform activity
-* Add and manage doctors
-* Manage appointments
-* Access admin dashboard
-
----
-
-## 🌟 Highlights
-
-* Clean and modular **full-stack architecture**
-* Secure and scalable backend with **JWT authentication**
-* Real-world integration with **payment gateway & cloud services**
-* Designed with a focus on **user experience and performance**
-
-
-
+* **Patient** – Register, Filter Doctors, Book/Cancel appointments, Make online payments
+*  **Doctor** – Manage/View Appointments, Access Dashboard, Edit Profile
+* **Admin** –  Track activity, Add/Manage Doctors, Manage Appointments, Access Dashboard
 
