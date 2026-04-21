@@ -30,7 +30,7 @@ Use the following Razorpay test credentials:
 *  **Backend** – Node.js, Express.js
 * **Database** –  MongoDB (Mongoose)
 *  **Authentication** – JWT (JSON Web Tokens)
-* *Cloud Integrations* – Cloudinary (Image Storage)
+* **Cloud Integrations** – Cloudinary (Image Storage)
 *  **Payment Gateway** –Razorpay (Payment Gateway – Test Mode)
 
 ---
